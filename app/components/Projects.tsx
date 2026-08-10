@@ -61,33 +61,33 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden px-6 py-32 md:px-10 md:py-48"
+      className="relative overflow-hidden px-5 py-24 sm:px-6 md:px-10 md:py-48"
     >
       <div className="mx-auto max-w-7xl">
         {/* Heading */}
-        <div className="mb-20 flex items-end justify-between">
+        <div className="mb-14 flex items-end justify-between sm:mb-20">
           <div>
             <p className="mb-5 text-xs font-medium uppercase tracking-[0.2em] text-zinc-400">
               01 — Selected work
             </p>
 
-            <h2 className="text-5xl font-medium tracking-[-0.05em] md:text-7xl">
+            <h2 className="text-4xl font-medium tracking-[-0.05em] sm:text-5xl md:text-7xl">
               Things I&apos;ve
               <br />
               <span className="text-zinc-400">made & worked on.</span>
             </h2>
           </div>
 
-          <span className="hidden text-xs text-zinc-400 md:block">
+          <span className="hidden text-xs text-zinc-400 sm:block">
             {project.number} / {projects.length.toString().padStart(2, "0")}
           </span>
         </div>
 
         {/* Main project area */}
-        <div className="grid items-center gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
+        <div className="grid min-w-0 items-center gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
           {/* Project list + details */}
-          <div className="order-2 lg:order-1">
-            <div className="mb-10 border-t border-zinc-200">
+          <div className="order-2 min-w-0 lg:order-1">
+            <div className="mb-8 border-t border-zinc-200 sm:mb-10">
               {projects.map((item, index) => {
                 const isActive = active === index;
 
@@ -95,11 +95,11 @@ export default function Projects() {
                   <button
                     key={item.title}
                     onClick={() => setActive(index)}
-                    className="group flex w-full items-center justify-between border-b border-zinc-200 py-5 text-left"
+                    className="group flex w-full min-w-0 items-center justify-between border-b border-zinc-200 py-4 text-left sm:py-5"
                   >
-                    <div className="flex items-center gap-5">
+                    <div className="flex min-w-0 items-center gap-3 sm:gap-5">
                       <span
-                        className={`text-xs transition-colors ${
+                        className={`shrink-0 text-xs transition-colors ${
                           isActive ? "text-zinc-900" : "text-zinc-400"
                         }`}
                       >
@@ -107,9 +107,9 @@ export default function Projects() {
                       </span>
 
                       <span
-                        className={`text-xl tracking-[-0.03em] transition-all duration-300 md:text-2xl ${
+                        className={`truncate text-lg tracking-[-0.03em] transition-all duration-300 sm:text-xl md:text-2xl ${
                           isActive
-                            ? "translate-x-2 font-medium text-zinc-900"
+                            ? "translate-x-1 font-medium text-zinc-900 sm:translate-x-2"
                             : "text-zinc-400 group-hover:text-zinc-700"
                         }`}
                       >
@@ -118,7 +118,7 @@ export default function Projects() {
                     </div>
 
                     <span
-                      className={`text-sm transition-all duration-300 ${
+                      className={`ml-3 shrink-0 text-sm transition-all duration-300 ${
                         isActive
                           ? "translate-x-0 opacity-100"
                           : "-translate-x-2 opacity-0"
@@ -133,23 +133,23 @@ export default function Projects() {
 
             {/* Details */}
             <div className="max-w-md">
-              <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-zinc-400">
+              <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-400 sm:text-xs">
                 {project.type}
               </p>
 
-              <h3 className="mb-5 text-3xl font-medium tracking-[-0.04em] md:text-4xl">
+              <h3 className="mb-4 text-2xl font-medium tracking-[-0.04em] sm:mb-5 sm:text-3xl md:text-4xl">
                 {project.title}
               </h3>
 
-              <p className="text-base leading-7 text-zinc-500">
+              <p className="text-sm leading-6 text-zinc-500 sm:text-base sm:leading-7">
                 {project.description}
               </p>
 
-              <div className="mt-7 flex flex-wrap gap-2">
+              <div className="mt-6 flex flex-wrap gap-2 sm:mt-7">
                 {project.tech.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full border border-zinc-200 px-3 py-1.5 text-xs text-zinc-500"
+                    className="rounded-full border border-zinc-200 px-2.5 py-1.5 text-[11px] text-zinc-500 sm:px-3 sm:text-xs"
                   >
                     {tech}
                   </span>
@@ -161,7 +161,7 @@ export default function Projects() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-9 inline-block text-sm font-medium transition-colors hover:text-violet-600"
+                  className="mt-7 inline-block text-sm font-medium transition-colors hover:text-violet-600 sm:mt-9"
                 >
                   View repository ↗
                 </a>
@@ -170,14 +170,14 @@ export default function Projects() {
           </div>
 
           {/* Visual */}
-          <div className="order-1 lg:order-2">
+          <div className="order-1 min-w-0 lg:order-2">
             <ProjectVisual project={project} index={active} />
           </div>
         </div>
 
         {/* Currently building */}
-        <div className="mt-32 border-t border-zinc-200 pt-8 md:mt-48">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <div className="mt-24 border-t border-zinc-200 pt-8 sm:mt-32 md:mt-48">
+          <div className="flex flex-col gap-5 sm:gap-6 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-zinc-400">
                 Currently building
@@ -212,27 +212,24 @@ function ProjectVisual({
 }) {
   return (
     <div
-      className={`relative aspect-[4/3] overflow-hidden rounded-[2.5rem] bg-gradient-to-br ${project.gradient} p-5 shadow-2xl transition-all duration-700 md:p-8`}
+      className={`relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-[2rem] bg-gradient-to-br ${project.gradient} p-3 shadow-2xl transition-all duration-700 sm:rounded-[2.5rem] sm:p-5 md:p-8`}
     >
       {/* Soft glass layer */}
       <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]" />
 
       {/* Light */}
-      <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-white/50 blur-3xl" />
+      <div className="absolute -right-24 -top-24 h-60 w-60 rounded-full bg-white/50 blur-3xl sm:h-80 sm:w-80" />
 
-      <div className="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-white/30 blur-3xl" />
+      <div className="absolute -bottom-24 -left-24 h-60 w-60 rounded-full bg-white/30 blur-3xl sm:h-80 sm:w-80" />
 
-      <div className="relative flex h-full items-center justify-center">
+      <div className="relative flex h-full w-full min-w-0 items-center justify-center">
         {index === 0 && <ConversationVisual />}
-
         {index === 1 && <KnowledgeVisual />}
-
         {index === 2 && <AsciiVisual />}
-
         {index === 3 && <AslVisual />}
       </div>
 
-      <div className="absolute bottom-6 left-7 text-xs font-medium text-zinc-700/60">
+      <div className="absolute bottom-4 left-5 text-[10px] font-medium text-zinc-700/60 sm:bottom-6 sm:left-7 sm:text-xs">
         {project.number}
       </div>
     </div>
@@ -245,37 +242,35 @@ function ProjectVisual({
 
 function ConversationVisual() {
   return (
-    <div className="relative h-[78%] w-[78%] max-w-[500px]">
+    <div className="relative h-[78%] w-[88%] max-w-[500px] sm:w-[78%]">
       {/* AI message */}
-      <div className="absolute right-0 top-0 max-w-[75%] rounded-[1.5rem] rounded-tr-md border border-white/70 bg-white/40 p-5 shadow-xl backdrop-blur-xl">
-        <div className="mb-2 text-[9px] uppercase tracking-[0.15em] text-violet-500">
+      <div className="absolute right-0 top-0 max-w-[78%] rounded-[1.25rem] rounded-tr-md border border-white/70 bg-white/40 p-3 shadow-xl backdrop-blur-xl sm:rounded-[1.5rem] sm:p-5">
+        <div className="mb-1.5 text-[8px] uppercase tracking-[0.15em] text-violet-500 sm:mb-2 sm:text-[9px]">
           AI tutor
         </div>
 
-        <p className="text-sm leading-6 text-zinc-800">
+        <p className="text-xs leading-5 text-zinc-800 sm:text-sm sm:leading-6">
           오늘은 무엇을 하고 싶어요?
         </p>
       </div>
 
       {/* User message */}
-      <div className="absolute bottom-16 left-0 max-w-[75%] rounded-[1.5rem] rounded-bl-md border border-white/70 bg-zinc-900/90 p-5 text-white shadow-xl">
-        <div className="mb-2 text-[9px] uppercase tracking-[0.15em] text-cyan-300">
+      <div className="absolute bottom-10 left-0 max-w-[78%] rounded-[1.25rem] rounded-bl-md border border-white/70 bg-zinc-900/90 p-3 text-white shadow-xl sm:bottom-16 sm:rounded-[1.5rem] sm:p-5">
+        <div className="mb-1.5 text-[8px] uppercase tracking-[0.15em] text-cyan-300 sm:mb-2 sm:text-[9px]">
           learner
         </div>
 
-        <p className="text-sm leading-6">
+        <p className="text-xs leading-5 sm:text-sm sm:leading-6">
           카페에 가고 싶어요.
         </p>
       </div>
 
       {/* Connection */}
-      <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/50 bg-white/20 backdrop-blur-xl">
-        <div className="flex h-full items-center justify-center text-2xl">
-          ✦
-        </div>
+      <div className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/50 bg-white/20 text-lg backdrop-blur-xl sm:h-24 sm:w-24 sm:text-2xl">
+        ✦
       </div>
 
-      <div className="absolute bottom-0 right-0 text-[9px] uppercase tracking-[0.18em] text-zinc-700/50">
+      <div className="absolute bottom-0 right-0 text-[7px] uppercase tracking-[0.12em] text-zinc-700/50 sm:text-[9px] sm:tracking-[0.18em]">
         conversation · practice · feedback
       </div>
     </div>
@@ -288,13 +283,13 @@ function ConversationVisual() {
 
 function KnowledgeVisual() {
   return (
-    <div className="w-[78%] max-w-[500px] rotate-[2deg] rounded-[2rem] border border-white/60 bg-zinc-950/90 p-6 font-mono text-xs text-zinc-300 shadow-2xl">
-      <div className="mb-6 flex justify-between">
+    <div className="w-[88%] max-w-[500px] rotate-[2deg] rounded-[1.5rem] border border-white/60 bg-zinc-950/90 p-4 font-mono text-[9px] text-zinc-300 shadow-2xl sm:w-[78%] sm:rounded-[2rem] sm:p-6 sm:text-xs">
+      <div className="mb-4 flex justify-between sm:mb-6">
         <span className="text-violet-300">knowledge-agent</span>
         <span className="text-zinc-600">RAG</span>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         <div>
           <span className="text-zinc-600">01</span>{" "}
           <span className="text-cyan-300">POST</span> /documents
@@ -316,14 +311,14 @@ function KnowledgeVisual() {
         </div>
       </div>
 
-      <div className="mt-8 rounded-xl border border-white/10 bg-white/5 p-4">
-        <span className="text-[10px] text-zinc-600">
+      <div className="mt-5 rounded-xl border border-white/10 bg-white/5 p-3 sm:mt-8 sm:p-4">
+        <span className="text-[8px] text-zinc-600 sm:text-[10px]">
           retrieved context
         </span>
 
-        <div className="mt-3 h-2 w-3/4 rounded-full bg-violet-400/60" />
-        <div className="mt-2 h-2 w-1/2 rounded-full bg-cyan-300/40" />
-        <div className="mt-2 h-2 w-2/3 rounded-full bg-fuchsia-400/40" />
+        <div className="mt-2 h-1.5 w-3/4 rounded-full bg-violet-400/60 sm:mt-3 sm:h-2" />
+        <div className="mt-1.5 h-1.5 w-1/2 rounded-full bg-cyan-300/40 sm:mt-2 sm:h-2" />
+        <div className="mt-1.5 h-1.5 w-2/3 rounded-full bg-fuchsia-400/40 sm:mt-2 sm:h-2" />
       </div>
     </div>
   );
@@ -334,19 +329,19 @@ function KnowledgeVisual() {
 -------------------------------- */
 
 const asciiArt = `
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣭⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣹⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡄⠀⠀⠀⣀⣀⣤⠤⢤⣀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⠴⠒⢋⣉⣀⣠⣄⣀⣈⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣾⣯⠴⠚⠉⠉⠀⠀⠀⠀⣤⠏⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡿⡇⠁⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⡿⠿⢛⠁⠁⣸⠀⠀⠀⠀⠀⣤⣾⠵⠚⠁
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⢦⡀⠀⣠⠀⡇⢧⠀⠀⢀⣠⡾⡇⠀⠀⠀⠀⠀⣠⣴⠿⠋⠁⠀⠀⠀⠀⠘⣿⠀⣀⡠⠞⠛⠁⠂⠁
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡈⣻⡦⣞⡿⣷⠸⣄⣡⢾⡿⠁⠀⠀⠀⣀⣴⠟⠋⠁⠀⠀⠀⠀⠐⠠⡤⣾⣙⣶⡶⠃
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣂⡷⠰⣔⣾⣖⣾⡷⢿⣐⣀⣀⣤⢾⣋⠁⠀⠀⠀⣀⢀⣀⣀⣀⣀⠀⢀⢿⠑⠃
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣭⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣹⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡄⠀⠀⠀⣀⣀⣤⠤⢤⣀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⠴⠒⢋⣉⣀⣠⣄⣀⣈⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣾⣯⠴⠚⠉⠉⠀⠀⠀⠀⣤⠏⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡿⡇⠁⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⡿⠿⢛⠁⠁⣸⠀⠀⠀⠀⠀⣤⣾⠵⠚⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⢦⡀⠀⣠⠀⡇⢧⠀⠀⢀⣠⡾⡇⠀⠀⠀⠀⠀⣠⣴⠿⠋⠁⠀⠀⠀⠀⠘⣿⠀⣀⡠⠞⠛⠁⠂⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡈⣻⡦⣞⡿⣷⠸⣄⣡⢾⡿⠁⠀⠀⠀⣀⣴⠟⠋⠁⠀⠀⠀⠀⠐⠠⡤⣾⣙⣶⡶⠃
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣂⡷⠰⣔⣾⣖⣾⡷⢿⣐⣀⣀⣤⢾⣋⠁⠀⠀⠀⣀⢀⣀⣀⣀⣀⠀⢀⢿⠑⠃
 ⠀⠀⠀⠀⠀⠀⠠⡦⠴⠴⠤⠦⠤⠤⠤⠤⠤⠴⠶⢾⣽⣙⠒⢺⣿⣿⣿⣿⢾⠶⣧⡼⢏⠑⠚⠋⠉⠉⡉⡉⠉⠉⠹⠈⠁⠉⠀⠨⢾⡂
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠂⠐⠀⠀⠀⠈⣇⡿⢯⢻⣟⣇⣷⣞⡛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣆⠀⠀⠀⠀⢠⡷⡛⣛⣼⣿⠟⠙⣧⠅⡄⠀⠀⠀⠀⠀⠀⠰⡆⠀⠀⠀⠀⢠⣾⡄
@@ -365,31 +360,36 @@ const asciiArt = `
 
 function AsciiVisual() {
   return (
-    <div className="group relative mx-auto flex h-[380px] w-full max-w-[520px] items-center justify-center overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#171329] via-[#21183b] to-[#102c3d]">
-      
+    <div className="group relative flex h-[260px] w-full max-w-[520px] items-center justify-center overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-[#171329] via-[#21183b] to-[#102c3d] sm:h-[320px] sm:rounded-[2rem] md:h-[380px]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(103,232,249,0.14),transparent_55%)]" />
 
       <pre
         className="
           relative z-10
+          max-w-full
           select-none
           whitespace-pre
           font-mono
-          text-[10px]
-          leading-[10px]
+          text-[5px]
+          leading-[5px]
+          tracking-[-0.1px]
           text-[#d8f7ff]/90
-          transition-all duration-1000 ease-out
+          transition-all
+          duration-1000
+          ease-out
           group-hover:scale-[1.08]
           group-hover:text-white
           group-hover:drop-shadow-[0_0_24px_rgba(103,232,249,0.35)]
-          sm:text-[10px]
-          sm:leading-[10px]
+          sm:text-[7px]
+          sm:leading-[7px]
+          md:text-[10px]
+          md:leading-[10px]
         "
       >
         {asciiArt}
       </pre>
 
-      <div className="absolute bottom-5 left-5 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1.5 text-[9px] uppercase tracking-[0.15em] text-cyan-200 backdrop-blur-md">
+      <div className="absolute bottom-4 left-4 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-2.5 py-1.5 text-[8px] uppercase tracking-[0.12em] text-cyan-200 backdrop-blur-md sm:bottom-5 sm:left-5 sm:px-3 sm:text-[9px] sm:tracking-[0.15em]">
         live camera → ASCII
       </div>
     </div>
@@ -402,22 +402,24 @@ function AsciiVisual() {
 
 function AslVisual() {
   return (
-    <div className="relative flex h-[80%] w-[75%] max-w-[430px] items-center justify-center rounded-[2rem] border border-white/60 bg-white/20 shadow-2xl backdrop-blur-xl">
+    <div className="relative flex h-[72%] w-[85%] max-w-[430px] items-center justify-center rounded-[1.5rem] border border-white/60 bg-white/20 shadow-2xl backdrop-blur-xl sm:h-[80%] sm:w-[75%] sm:rounded-[2rem]">
       <div className="text-center">
-        <div className="text-[100px] leading-none">🤟</div>
+        <div className="text-[64px] leading-none sm:text-[80px] md:text-[100px]">
+          🤟
+        </div>
 
-        <div className="mt-5 text-xs font-medium uppercase tracking-[0.2em] text-zinc-700/60">
+        <div className="mt-4 text-[9px] font-medium uppercase tracking-[0.15em] text-zinc-700/60 sm:mt-5 sm:text-xs sm:tracking-[0.2em]">
           gesture detected
         </div>
 
-        <div className="mt-2 text-3xl font-medium tracking-[-0.05em] text-zinc-900">
+        <div className="mt-1.5 text-2xl font-medium tracking-[-0.05em] text-zinc-900 sm:mt-2 sm:text-3xl">
           ASL → A
         </div>
       </div>
 
-      <div className="absolute left-6 top-6 h-3 w-3 rounded-full bg-[#d9ff4a]" />
+      <div className="absolute left-4 top-4 h-2.5 w-2.5 rounded-full bg-[#d9ff4a] sm:left-6 sm:top-6 sm:h-3 sm:w-3" />
 
-      <div className="absolute bottom-7 right-7 h-4 w-4 rounded-full bg-violet-500" />
+      <div className="absolute bottom-5 right-5 h-3 w-3 rounded-full bg-violet-500 sm:bottom-7 sm:right-7 sm:h-4 sm:w-4" />
     </div>
   );
 }
