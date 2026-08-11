@@ -16,43 +16,66 @@ const projects: Project[] = [
   {
     number: "01",
     type: "PROFESSIONAL EXPERIENCE · AI",
+
     title: "AI Conversation Tutor",
+
     description:
-      "Worked on an AI-powered Korean language-learning product designed around conversational practice. I contributed to building the product experience and turning AI interactions into something learners could actually use.",
-    tech: ["AI", "Frontend", "Education", "Product"],
+      "Worked on an AI-powered Korean language-learning platform built around conversational practice. I engineered backend infrastructure and application logic with Python and FastAPI, integrated real-time data and database services, and helped build the systems behind the learning experience.",
+
+    tech: ["Python", "FastAPI", "Flutter", "Firebase", "AWS"],
+
     gradient: "from-cyan-200 via-violet-200 to-fuchsia-300",
   },
+
   {
     number: "02",
     type: "AI · BACKEND",
+
     title: "Knowledge Agent",
+
     description:
-      "A production-inspired RAG backend built from scratch. Documents are processed, chunked, embedded, stored in a vector database, and retrieved through a FastAPI service.",
+      "A production-inspired RAG backend built from scratch. It processes documents into searchable knowledge by handling extraction, chunking, embeddings, vector storage, and retrieval through a FastAPI service, with Ollama powering local LLM inference.",
+
     tech: ["Python", "FastAPI", "ChromaDB", "Ollama", "Docker"],
+
     github: "https://github.com/ha-anna/knowledge-agent",
+
     gradient: "from-violet-300 via-fuchsia-200 to-orange-200",
   },
+
   {
     number: "03",
     type: "CREATIVE CODING · C++",
+
     title: "ASCII Art Camera",
+
     description:
-      "A real-time experiment that transforms webcam input into ASCII art using C++ and openFrameworks.",
-    tech: ["C++", "openFrameworks"],
+      "A real-time computer vision experiment that turns live webcam input into ASCII art. Built in C++ with openFrameworks to explore image processing, rendering, and interactive visual output.",
+
+    tech: ["C++", "openFrameworks", ],
+
     github: "https://github.com/ha-anna/ASCII_art_app",
+
     gradient: "from-lime-200 via-yellow-100 to-cyan-200",
   },
+
   {
     number: "04",
-    type: "COMPUTER VISION · ML",
+    type: "MACHINE LEARNING · COMPUTER VISION",
+
     title: "ASL Recognition",
+
     description:
-      "A convolutional neural network trained to recognize American Sign Language alphabet gestures from images.",
-    tech: ["Python", "PyTorch", "CNN"],
+      "A computer vision project using a convolutional neural network to recognize American Sign Language alphabet gestures from images, exploring the process of preparing visual data and training a model for gesture classification.",
+
+    tech: ["Python", "PyTorch", "CNN", "Computer Vision"],
+
     github: "https://github.com/ha-anna/asl-alphabet-recognition",
+
     gradient: "from-pink-200 via-orange-200 to-violet-300",
   },
 ];
+
 
 export default function Projects() {
   const [active, setActive] = useState(0);
@@ -172,30 +195,6 @@ export default function Projects() {
           {/* Visual */}
           <div className="order-1 min-w-0 lg:order-2">
             <ProjectVisual project={project} index={active} />
-          </div>
-        </div>
-
-        {/* Currently building */}
-        <div className="mt-24 border-t border-zinc-200 pt-8 sm:mt-32 md:mt-48">
-          <div className="flex flex-col gap-5 sm:gap-6 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-zinc-400">
-                Currently building
-              </p>
-
-              <h3 className="text-2xl font-medium tracking-[-0.04em]">
-                Stash
-              </h3>
-            </div>
-
-            <p className="max-w-lg text-sm leading-6 text-zinc-500">
-              An iOS app for content creators to organize, tag, and reuse
-              B-roll footage. Currently in development.
-            </p>
-
-            <span className="shrink-0 text-xs text-zinc-400">
-              SwiftUI · SwiftData · iOS
-            </span>
           </div>
         </div>
       </div>
@@ -360,7 +359,7 @@ const asciiArt = `
 
 function AsciiVisual() {
   return (
-    <div className="group relative flex h-[260px] w-full max-w-[520px] items-center justify-center overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-[#171329] via-[#21183b] to-[#102c3d] sm:h-[320px] sm:rounded-[2rem] md:h-[380px]">
+    <div className="group relative flex h-[260px] w-full max-w-[500px] items-center justify-center overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-[#171329] via-[#21183b] to-[#102c3d] sm:h-[80%] sm:rounded-[2rem] md:h-[70%]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(103,232,249,0.14),transparent_55%)]" />
 
       <pre

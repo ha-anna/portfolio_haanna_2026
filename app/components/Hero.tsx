@@ -11,31 +11,32 @@ type Card = {
   gradient: string;
 };
 
+
 const cards: Card[] = [
   {
     id: 0,
-    eyebrow: "01 — MAKE",
-    title: "I like making things.",
+    eyebrow: "01 — BUILD",
+    title: "I turn ideas into working things.",
     description:
-      "Ideas are more interesting to me once I can turn them into something real.",
+      "I like getting past the idea stage — prototyping, figuring out what works, and turning it into something people can actually use.",
     symbol: "✦",
     gradient: "from-violet-300 via-fuchsia-200 to-orange-200",
   },
   {
     id: 1,
     eyebrow: "02 — EXPLORE",
-    title: "I follow curiosity.",
+    title: "I learn by getting my hands dirty.",
     description:
-      "Lately that has taken me through AI, accessibility, hardware, and everything in between.",
+      "I've worked across AI, backend systems, computer vision, mobile, and C++ — usually by picking something unfamiliar and figuring it out.",
     symbol: "◌",
     gradient: "from-cyan-200 via-blue-200 to-violet-300",
   },
   {
     id: 2,
-    eyebrow: "03 — BUILD",
-    title: "Now I build with code.",
+    eyebrow: "03 — ENGINEER",
+    title: "I care about the details underneath.",
     description:
-      "Computer science gave me a way to turn all those questions into things I can actually build.",
+      "APIs, databases, testing, infrastructure, and the logic behind the interface are all part of making software work well.",
     symbol: "◇",
     gradient: "from-lime-200 via-yellow-100 to-cyan-200",
   },
@@ -73,7 +74,13 @@ export default function Hero() {
           {/* Left */}
           <div>
             <p className="mb-7 text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
-              Software Developer · Product Builder · Curious person
+              <span className="block sm:inline">Software Developer</span>
+              <span className="hidden sm:inline"> · </span>
+
+              <span className="block sm:inline">Product-minded Engineer</span>
+              <span className="hidden sm:inline"> · </span>
+
+              <span className="block sm:inline">Curious by nature</span>
             </p>
 
             <h1 className="max-w-3xl text-[4rem] font-medium leading-[0.88] tracking-[-0.065em] sm:text-6xl md:text-7xl lg:text-[7rem]">
@@ -189,7 +196,7 @@ export default function Hero() {
 
           <div className="hidden gap-5 sm:flex">
             <a
-              href="https://github.com/YOUR_USERNAME"
+              href="https://github.com/ha-anna"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors hover:text-zinc-900"
@@ -198,7 +205,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/YOUR_USERNAME/"
+              href="https://www.linkedin.com/in/ha-anna"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors hover:text-zinc-900"

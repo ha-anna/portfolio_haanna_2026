@@ -13,39 +13,41 @@ export default function About() {
 
         <div className="max-w-3xl">
           <p className="text-2xl font-medium leading-tight tracking-[-0.02em] md:text-4xl md:leading-tight">
-            I started out studying English, but I&apos;ve always been curious about
-            how things work and how people use them.
+            I&apos;m interested in understanding how things work — and then
+            figuring out how to build them myself.
           </p>
 
           <div className="mt-10 space-y-6 text-base leading-7 text-zinc-500 md:text-lg md:leading-8">
             <p>
-              Eventually, I realized that computer science gave me a way to
-              turn that curiosity into something tangible. Instead of just
-              using technology, I wanted to understand what was happening
-              underneath it and learn how to build things myself.
+              My path into software wasn&apos;t exactly straightforward. I
+              started out in English Studies, but I kept gravitating toward
+              technology, design, and building things on my own. Eventually, I
+              taught myself enough to land my first job in software, working on
+              an AI-powered language-learning product.
             </p>
 
             <p>
-              So I went back to university and started studying Computer
-              Science & Engineering. Since then, I&apos;ve been exploring
-              everything from frontend development and accessibility to
-              backend systems, AI, and the process of turning an idea into
-              something people can actually use.
+              That experience changed the direction I wanted to take. Working
+              on a real product made me want to understand more than just the
+              parts I could build myself — I wanted to understand the systems
+              underneath them. So I went back to university and started
+              studying Computer Science &amp; Engineering at Sogang University.
             </p>
 
             <p>
-              I&apos;m especially drawn to small teams where I can move between
-              different parts of a product, learn quickly, and take something
-              from an idea to a working version.
+              Since then, I&apos;ve continued building across different areas
+              of software: backend systems, AI and machine learning, computer
+              vision, mobile development, accessibility, and creative coding.
+              A lot of my projects start with something I don&apos;t know how
+              to do yet, and figuring it out is part of what I enjoy.
             </p>
-          </div>
 
-          <div className="mt-12 flex flex-wrap gap-x-6 gap-y-3 border-t border-zinc-200 pt-6 text-xs uppercase tracking-[0.1em] text-zinc-400">
-            <span>Frontend</span>
-            <span>Backend</span>
-            <span>AI</span>
-            <span>Accessibility</span>
-            <span>Product</span>
+            <p>
+              I&apos;m now looking for a software engineering internship where
+              I can bring that same persistence and curiosity to a real team —
+              contributing wherever I can, learning quickly, and taking on
+              problems that are a little beyond what I already know.
+            </p>
           </div>
         </div>
       </div>
