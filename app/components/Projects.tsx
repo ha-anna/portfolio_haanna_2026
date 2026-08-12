@@ -130,7 +130,7 @@ export default function Projects() {
                       </span>
 
                       <span
-                        className={`truncate text-lg tracking-[-0.03em] transition-all duration-300 sm:text-xl md:text-2xl ${
+                        className={`truncate text-lg tracking-[-0.03em] transition-[color,transform] duration-300 sm:text-xl md:text-2xl ${
                           isActive
                             ? "translate-x-1 font-medium text-zinc-900 sm:translate-x-2"
                             : "text-zinc-400 group-hover:text-zinc-700"
@@ -141,7 +141,7 @@ export default function Projects() {
                     </div>
 
                     <span
-                      className={`ml-3 shrink-0 text-sm transition-all duration-300 ${
+                      className={`ml-3 shrink-0 text-sm transition-[transform,opacity] duration-300 ${
                         isActive
                           ? "translate-x-0 opacity-100"
                           : "-translate-x-2 opacity-0"
@@ -211,15 +211,15 @@ function ProjectVisual({
 }) {
   return (
     <div
-      className={`relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-[2rem] bg-gradient-to-br ${project.gradient} p-3 shadow-2xl transition-all duration-700 sm:rounded-[2.5rem] sm:p-5 md:p-8`}
+      className={`relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-[2rem] bg-gradient-to-br ${project.gradient} p-3 shadow-2xl sm:rounded-[2.5rem] sm:p-5 md:p-8`}
     >
       {/* Soft glass layer */}
       <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]" />
 
       {/* Light */}
-      <div className="absolute -right-24 -top-24 h-60 w-60 rounded-full bg-white/50 blur-3xl sm:h-80 sm:w-80" />
+      <div className="absolute -right-24 -top-24 h-60 w-60 rounded-full bg-white/50 blur-2xl [transform:translateZ(0)] sm:h-80 sm:w-80 sm:blur-3xl" />
 
-      <div className="absolute -bottom-24 -left-24 h-60 w-60 rounded-full bg-white/30 blur-3xl sm:h-80 sm:w-80" />
+      <div className="absolute -bottom-24 -left-24 h-60 w-60 rounded-full bg-white/30 blur-2xl [transform:translateZ(0)] sm:h-80 sm:w-80 sm:blur-3xl" />
 
       <div className="relative flex h-full w-full min-w-0 items-center justify-center">
         {index === 0 && <ConversationVisual />}
@@ -242,8 +242,7 @@ function ProjectVisual({
 function ConversationVisual() {
   return (
     <div className="relative h-[78%] w-[88%] max-w-[500px] sm:w-[78%]">
-      {/* AI message */}
-      <div className="absolute right-0 top-0 max-w-[78%] rounded-[1.25rem] rounded-tr-md border border-white/70 bg-white/40 p-3 shadow-xl backdrop-blur-xl sm:rounded-[1.5rem] sm:p-5">
+      <div className="absolute right-0 top-0 max-w-[78%] rounded-[1.25rem] rounded-tr-md border border-white/70 bg-white/40 p-3 shadow-xl backdrop-blur-md sm:rounded-[1.5rem] sm:p-5 sm:backdrop-blur-xl">
         <div className="mb-1.5 text-[8px] uppercase tracking-[0.15em] text-violet-500 sm:mb-2 sm:text-[9px]">
           AI tutor
         </div>
@@ -253,7 +252,6 @@ function ConversationVisual() {
         </p>
       </div>
 
-      {/* User message */}
       <div className="absolute bottom-10 left-0 max-w-[78%] rounded-[1.25rem] rounded-bl-md border border-white/70 bg-zinc-900/90 p-3 text-white shadow-xl sm:bottom-16 sm:rounded-[1.5rem] sm:p-5">
         <div className="mb-1.5 text-[8px] uppercase tracking-[0.15em] text-cyan-300 sm:mb-2 sm:text-[9px]">
           learner
@@ -265,7 +263,7 @@ function ConversationVisual() {
       </div>
 
       {/* Connection */}
-      <div className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/50 bg-white/20 text-lg backdrop-blur-xl sm:h-24 sm:w-24 sm:text-2xl">
+      <div className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/50 bg-white/20 text-lg backdrop-blur-md sm:h-24 sm:w-24 sm:text-2xl sm:backdrop-blur-xl">
         ✦
       </div>
 
@@ -373,7 +371,8 @@ function AsciiVisual() {
           leading-[5px]
           tracking-[-0.1px]
           text-[#d8f7ff]/90
-          transition-all
+          will-change-transform
+          transition-[transform,color,filter]
           duration-1000
           ease-out
           group-hover:scale-[1.08]
@@ -401,7 +400,7 @@ function AsciiVisual() {
 
 function AslVisual() {
   return (
-    <div className="relative flex h-[72%] w-[85%] max-w-[430px] items-center justify-center rounded-[1.5rem] border border-white/60 bg-white/20 shadow-2xl backdrop-blur-xl sm:h-[80%] sm:w-[75%] sm:rounded-[2rem]">
+    <div className="relative flex h-[72%] w-[85%] max-w-[430px] items-center justify-center rounded-[1.5rem] border border-white/60 bg-white/20 shadow-2xl backdrop-blur-md sm:h-[80%] sm:w-[75%] sm:rounded-[2rem] sm:backdrop-blur-xl">
       <div className="text-center">
         <div className="text-[64px] leading-none sm:text-[80px] md:text-[100px]">
           🤟

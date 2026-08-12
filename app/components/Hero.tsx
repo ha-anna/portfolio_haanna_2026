@@ -11,7 +11,6 @@ type Card = {
   gradient: string;
 };
 
-
 const cards: Card[] = [
   {
     id: 0,
@@ -50,17 +49,17 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden px-6 py-6 md:px-10 md:py-8">
+    <section className="relative min-h-[100dvh] overflow-hidden px-6 py-6 md:px-10 md:py-8">
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -right-40 top-10 h-[500px] w-[500px] rounded-full bg-cyan-300/20 blur-[130px]" />
+        <div className="absolute -right-40 top-10 h-[500px] w-[500px] rounded-full bg-cyan-300/20 blur-[70px] [transform:translateZ(0)]" />
 
-        <div className="absolute right-[20%] top-[40%] h-[400px] w-[400px] rounded-full bg-violet-400/20 blur-[120px]" />
+        <div className="hidden md:block absolute right-[20%] top-[40%] h-[400px] w-[400px] rounded-full bg-violet-400/20 blur-[70px] [transform:translateZ(0)]" />
 
-        <div className="absolute bottom-[-200px] left-[20%] h-[400px] w-[400px] rounded-full bg-fuchsia-300/15 blur-[120px]" />
+        <div className="hidden md:block absolute bottom-[-200px] left-[20%] h-[400px] w-[400px] rounded-full bg-fuchsia-300/15 blur-[70px] [transform:translateZ(0)]" />
       </div>
 
-      <div className="relative z-10 flex min-h-[calc(100vh-3rem)] flex-col md:min-h-[calc(100vh-4rem)]">
+      <div className="relative z-10 flex min-h-[calc(100dvh-3rem)] flex-col md:min-h-[calc(100dvh-4rem)]">
         {/* Header */}
         <div className="text-sm">
           <span className="font-medium">HA ANNA </span>
@@ -116,7 +115,8 @@ export default function Hero() {
                       bg-gradient-to-br ${card.gradient}
                       p-7 text-left
                       shadow-2xl
-                      transition-all duration-700 ease-out
+                      will-change-transform
+                      transition-[transform,opacity] duration-700 ease-out
                       ${isFront ? "cursor-pointer" : "pointer-events-none"}
                       ${
                         position === 0
@@ -128,7 +128,7 @@ export default function Hero() {
                     `}
                   >
                     {/* Glass overlay */}
-                    <div className="absolute inset-0 rounded-[2rem] bg-white/20 backdrop-blur-[2px]" />
+                    <div className="absolute inset-0 rounded-[2rem] bg-white/20 md:backdrop-blur-[2px]" />
 
                     {/* Content */}
                     <div className="relative flex h-full flex-col justify-between">
