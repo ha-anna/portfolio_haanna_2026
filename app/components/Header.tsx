@@ -7,7 +7,14 @@ export default function Header() {
             href="#projects"
             className="text-zinc-500 transition-colors hover:text-zinc-900"
           >
-            Work
+            Projects
+          </a>
+
+          <a
+            href="#lately"
+            className="text-zinc-500 transition-colors hover:text-zinc-900"
+          >
+            Lately
           </a>
 
           <a
