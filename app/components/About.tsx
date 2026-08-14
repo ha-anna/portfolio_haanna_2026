@@ -2,12 +2,12 @@ export default function About() {
   return (
     <section
       id="about"
-      className="border-t border-zinc-200 px-6 py-24 md:px-10 md:py-40"
+      className="px-6 py-24 md:px-10 md:py-40"
     >
       <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
         <div>
-          <p className="text-sm font-medium uppercase tracking-[0.15em]">
-            About
+          <p className="mb-5 text-xs font-medium uppercase tracking-[0.2em] text-zinc-400">
+            03 — About
           </p>
         </div>
 

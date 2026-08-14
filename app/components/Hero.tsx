@@ -118,12 +118,11 @@ export default function Hero() {
                       will-change-transform
                       transition-[transform,opacity] duration-700 ease-out
                       ${isFront ? "cursor-pointer" : "pointer-events-none"}
-                      ${
-                        position === 0
-                          ? "z-30 rotate-[-3deg] scale-100 opacity-100"
-                          : position === 1
-                            ? "z-20 translate-x-8 translate-y-5 rotate-[7deg] scale-[0.94] opacity-80"
-                            : "z-10 translate-x-16 translate-y-10 rotate-[14deg] scale-[0.88] opacity-50"
+                      ${position === 0
+                        ? "z-30 rotate-[-3deg] scale-100 opacity-100"
+                        : position === 1
+                          ? "z-20 translate-x-8 translate-y-5 rotate-[7deg] scale-[0.94] opacity-80"
+                          : "z-10 translate-x-16 translate-y-10 rotate-[14deg] scale-[0.88] opacity-50"
                       }
                     `}
                   >
@@ -179,11 +178,10 @@ export default function Hero() {
                   key={card.id}
                   onClick={() => setActive(index)}
                   aria-label={`Show card ${index + 1}`}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${
-                    index === active
+                  className={`h-1.5 rounded-full transition-all duration-500 ${index === active
                       ? "w-8 bg-zinc-900"
                       : "w-1.5 bg-zinc-300 hover:bg-zinc-500"
-                  }`}
+                    }`}
                 />
               ))}
             </div>

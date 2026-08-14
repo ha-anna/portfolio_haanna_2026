@@ -6,8 +6,8 @@ export default function Contact() {
     >
       <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
         <div>
-          <p className="text-sm font-medium uppercase tracking-[0.15em]">
-            Contact
+          <p className="mb-5 text-xs font-medium uppercase tracking-[0.2em] text-zinc-400">
+            04 — Contact
           </p>
         </div>
 
@@ -26,7 +26,7 @@ export default function Contact() {
             href="mailto:its.haanna@gmail.com"
             className="group mt-10 inline-flex items-center gap-3 border-b border-zinc-900 pb-1 text-lg font-medium"
           >
-            its.haanna@gmail.com
+            its.haanna[at]gmail.com
 
             <span className="transition-transform duration-300 group-hover:translate-x-1">
               ↗

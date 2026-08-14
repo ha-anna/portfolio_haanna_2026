@@ -52,7 +52,7 @@ const projects: Project[] = [
     description:
       "A real-time computer vision experiment that turns live webcam input into ASCII art. Built in C++ with openFrameworks to explore image processing, rendering, and interactive visual output.",
 
-    tech: ["C++", "openFrameworks", ],
+    tech: ["C++", "openFrameworks",],
 
     github: "https://github.com/ha-anna/ASCII_art_app",
 
@@ -122,30 +122,27 @@ export default function Projects() {
                   >
                     <div className="flex min-w-0 items-center gap-3 sm:gap-5">
                       <span
-                        className={`shrink-0 text-xs transition-colors ${
-                          isActive ? "text-zinc-900" : "text-zinc-400"
-                        }`}
+                        className={`shrink-0 text-xs transition-colors ${isActive ? "text-zinc-900" : "text-zinc-400"
+                          }`}
                       >
                         {item.number}
                       </span>
 
                       <span
-                        className={`truncate text-lg tracking-[-0.03em] transition-[color,transform] duration-300 sm:text-xl md:text-2xl ${
-                          isActive
+                        className={`truncate text-lg tracking-[-0.03em] transition-[color,transform] duration-300 sm:text-xl md:text-2xl ${isActive
                             ? "translate-x-1 font-medium text-zinc-900 sm:translate-x-2"
                             : "text-zinc-400 group-hover:text-zinc-700"
-                        }`}
+                          }`}
                       >
                         {item.title}
                       </span>
                     </div>
 
                     <span
-                      className={`ml-3 shrink-0 text-sm transition-[transform,opacity] duration-300 ${
-                        isActive
+                      className={`ml-3 shrink-0 text-sm transition-[transform,opacity] duration-300 ${isActive
                           ? "translate-x-0 opacity-100"
                           : "-translate-x-2 opacity-0"
-                      }`}
+                        }`}
                     >
                       ↗
                     </span>
