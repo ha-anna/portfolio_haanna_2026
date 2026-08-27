@@ -23,10 +23,10 @@ export default function Contact() {
           </p>
 
           <a
-            href="mailto:its.haanna@gmail.com"
+            href="mailto:anna@haanna.com"
             className="group mt-10 inline-flex items-center gap-3 border-b border-zinc-900 pb-1 text-lg font-medium"
           >
-            its.haanna[at]gmail.com
+            anna@haanna.com
 
             <span className="transition-transform duration-300 group-hover:translate-x-1">
               ↗
