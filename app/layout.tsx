@@ -9,9 +9,9 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Ha Anna | Portfolio",
+  title: "Ha Anna | Software Engineer · Computer Vision & ML",
   description:
-    "Ha Anna is a Computer Science student and product-minded engineer based in Seoul.",
+    "Ha Anna is a software engineer and Computer Science & Engineering student at Sogang University in Seoul, with professional product development experience and a current focus on computer vision and machine learning.",
 };
 
 export default function RootLayout({

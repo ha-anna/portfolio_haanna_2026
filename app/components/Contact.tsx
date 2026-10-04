@@ -13,13 +13,11 @@ export default function Contact() {
 
         <div>
           <h2 className="max-w-3xl text-4xl font-medium leading-[1.05] tracking-[-0.04em] md:text-6xl">
-            Have something interesting in mind?
+            Let’s build something useful.
           </h2>
 
           <p className="mt-6 max-w-lg text-base leading-7 text-zinc-500 md:text-lg">
-            I&apos;m always interested in meeting people who are building things,
-            solving interesting problems, or looking for someone curious enough
-            to figure things out.
+            I’m looking for software engineering internships, especially on teams working with machine learning or computer vision. If my product development experience and current projects fit what you’re building, I’d love to talk.
           </p>
 
           <a

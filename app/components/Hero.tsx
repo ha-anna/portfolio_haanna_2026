@@ -14,28 +14,28 @@ type Card = {
 const cards: Card[] = [
   {
     id: 0,
-    eyebrow: "01 — BUILD",
-    title: "I turn ideas into working things.",
+    eyebrow: "01 — EXPERIENCE",
+    title: "I build software people can use.",
     description:
-      "I like getting past the idea stage — prototyping, figuring out what works, and turning it into something people can actually use.",
+      "My professional background spans web, mobile, backend, and AI-powered educational products. I bring that experience to the projects I build today.",
     symbol: "✦",
     gradient: "from-violet-300 via-fuchsia-200 to-orange-200",
   },
   {
     id: 1,
-    eyebrow: "02 — EXPLORE",
-    title: "I learn by getting my hands dirty.",
+    eyebrow: "02 — CURRENT FOCUS",
+    title: "I explore how machines see.",
     description:
-      "I've worked across AI, backend systems, computer vision, mobile, and C++ — usually by picking something unfamiliar and figuring it out.",
+      "Through chest X-ray classification and ASL recognition, I’m learning how to prepare data, train models, and evaluate what they can actually do.",
     symbol: "◌",
     gradient: "from-cyan-200 via-blue-200 to-violet-300",
   },
   {
     id: 2,
-    eyebrow: "03 — ENGINEER",
-    title: "I care about the details underneath.",
+    eyebrow: "03 — APPROACH",
+    title: "I care about how things work.",
     description:
-      "APIs, databases, testing, infrastructure, and the logic behind the interface are all part of making software work well.",
+      "From a real-time image processing app in C++ to a document retrieval backend, I like understanding the pieces that make a system useful and well-engineered.",
     symbol: "◇",
     gradient: "from-lime-200 via-yellow-100 to-cyan-200",
   },
@@ -65,26 +65,25 @@ export default function Hero() {
           {/* Left */}
           <div>
             <p className="mb-7 text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
-              <span className="block sm:inline">Software Developer</span>
+              <span className="block sm:inline">Software Engineer</span>
               <span className="hidden sm:inline"> · </span>
 
-              <span className="block sm:inline">Product-minded Engineer</span>
+              <span className="block sm:inline">Computer Vision &amp; ML</span>
               <span className="hidden sm:inline"> · </span>
 
-              <span className="block sm:inline">Curious by nature</span>
+              <span className="block sm:inline">Sogang University · Seoul</span>
             </p>
 
             <h1 className="max-w-3xl text-[4rem] font-medium leading-[0.88] tracking-[-0.065em] sm:text-6xl md:text-7xl lg:text-[7rem]">
-              I make
+              I build.
               <br />
-              things I
+              I learn.
               <br />
-              <span className="text-zinc-400">wonder about.</span>
+              <span className="text-zinc-400">I look deeper.</span>
             </h1>
 
             <p className="mt-10 max-w-md text-base leading-7 text-zinc-500 md:text-lg">
-              A collection of things I&apos;ve built, learned, broken, and made
-              work.
+              I’m a software engineer and Computer Science &amp; Engineering student, building on professional product experience to explore computer vision and machine learning.
             </p>
           </div>
 

@@ -30,8 +30,7 @@ export default async function Lately() {
                         </h2>
 
                         <p className="mt-5 max-w-md text-base leading-relaxed opacity-50">
-                            A little window into what I&apos;ve been making,
-                            learning, and thinking about.
+                            Notes from my projects, studies, and the developer community in Seoul.
                         </p>
                     </div>
                 </div>

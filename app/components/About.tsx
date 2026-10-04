@@ -13,40 +13,24 @@ export default function About() {
 
         <div className="max-w-3xl">
           <p className="text-2xl font-medium leading-tight tracking-[-0.02em] md:text-4xl md:leading-tight">
-            I&apos;m interested in understanding how things work — and then
-            figuring out how to build them myself.
+            From building products to understanding the systems behind them.
           </p>
 
           <div className="mt-10 space-y-6 text-base leading-7 text-zinc-500 md:text-lg md:leading-8">
             <p>
-              My path into software wasn&apos;t exactly straightforward. I
-              started out in English Studies, but I kept gravitating toward
-              technology, design, and building things on my own. Eventually, I
-              taught myself enough to land my first job in software, working on
-              an AI-powered language-learning product.
+              I started in English Studies and found my way into software by building things. That became professional work across web, mobile, backend, and AI-powered educational products — including a Korean conversation-learning platform.
             </p>
 
             <p>
-              That experience changed the direction I wanted to take. Working
-              on a real product made me want to understand more than just the
-              parts I could build myself — I wanted to understand the systems
-              underneath them. So I went back to university and started
-              studying Computer Science &amp; Engineering at Sogang University.
+              Working on real products made me want a deeper technical foundation. I&apos;m now studying Computer Science &amp; Engineering at Sogang University in Seoul, with a current focus on deep learning, applied mathematics, and computer vision.
             </p>
 
             <p>
-              Since then, I&apos;ve continued building across different areas
-              of software: backend systems, AI and machine learning, computer
-              vision, mobile development, accessibility, and creative coding.
-              A lot of my projects start with something I don&apos;t know how
-              to do yet, and figuring it out is part of what I enjoy.
+              My current projects include VisionX, a chest X-ray classification capstone, and real-time ASL recognition with MediaPipe. Alongside them, I build in C++ and Python and explore how models and application code fit together. I want to make software that is useful, accessible, and well-engineered.
             </p>
 
             <p>
-              I&apos;m now looking for a software engineering internship where
-              I can bring that same persistence and curiosity to a real team —
-              contributing wherever I can, learning quickly, and taking on
-              problems that are a little beyond what I already know.
+              I also help organize weekly freeCodeCamp Seoul meetups and take part in local tech events. I&apos;m looking for software engineering internship opportunities, particularly on teams working with machine learning or computer vision, where I can contribute my development experience while growing my technical depth.
             </p>
           </div>
         </div>

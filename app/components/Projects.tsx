@@ -10,69 +10,72 @@ type Project = {
   tech: string[];
   github?: string;
   gradient: string;
+  visual: "conversation" | "knowledge" | "ascii" | "asl" | "cxr";
 };
 
 const projects: Project[] = [
   {
     number: "01",
-    type: "PROFESSIONAL EXPERIENCE · AI",
-
-    title: "AI Conversation Tutor",
-
+    type: "CAPSTONE · COMPUTER VISION · IN PROGRESS",
+    title: "VisionX CXR-CAD",
     description:
-      "Worked on an AI-powered Korean language-learning platform built around conversational practice. I engineered backend infrastructure and application logic with Python and FastAPI, integrated real-time data and database services, and helped build the systems behind the learning experience.",
-
-    tech: ["Python", "FastAPI", "Flutter", "Firebase", "AWS"],
-
-    gradient: "from-cyan-200 via-violet-200 to-fuchsia-300",
+      "A multi-label chest X-ray classification capstone using the NIH ChestX-ray14 dataset. I’m exploring medical image classification, class imbalance, model evaluation, and explainability, with deployment as part of the project direction. This is an academic research prototype.",
+    tech: ["Python", "PyTorch", "ChestX-ray14", "Computer Vision"],
+    gradient: "from-cyan-200 via-blue-200 to-violet-300",
+    visual: "cxr",
   },
-
   {
     number: "02",
-    type: "AI · BACKEND",
-
-    title: "Knowledge Agent",
-
+    type: "REAL-TIME COMPUTER VISION · IN PROGRESS",
+    title: "ASL MediaPipe Recognition",
     description:
-      "A production-inspired RAG backend built from scratch. It processes documents into searchable knowledge by handling extraction, chunking, embeddings, vector storage, and retrieval through a FastAPI service, with Ollama powering local LLM inference.",
-
-    tech: ["Python", "FastAPI", "ChromaDB", "Ollama", "Docker"],
-
-    github: "https://github.com/ha-anna/knowledge-agent",
-
-    gradient: "from-violet-300 via-fuchsia-200 to-orange-200",
+      "A real-time ASL alphabet recognition project using MediaPipe hand landmarks and neural network classification. Following my image-based CNN project, I’m exploring a different representation: classifying hand landmarks rather than full images.",
+    tech: ["JavaScript", "MediaPipe", "Machine Learning"],
+    gradient: "from-lime-200 via-yellow-100 to-cyan-200",
+    visual: "asl",
   },
-
   {
     number: "03",
-    type: "CREATIVE CODING · C++",
-
+    type: "C++ · REAL-TIME IMAGE PROCESSING",
     title: "ASCII Art Camera",
-
     description:
-      "A real-time computer vision experiment that turns live webcam input into ASCII art. Built in C++ with openFrameworks to explore image processing, rendering, and interactive visual output.",
-
-    tech: ["C++", "openFrameworks",],
-
+      "A native webcam application that transforms live video frames into ASCII art. Built in C++ with openFrameworks, it brings together image processing and rendering in a real-time visual application.",
+    tech: ["C++", "openFrameworks", "Image Processing"],
     github: "https://github.com/ha-anna/ASCII_art_app",
-
-    gradient: "from-lime-200 via-yellow-100 to-cyan-200",
+    gradient: "from-violet-300 via-fuchsia-200 to-orange-200",
+    visual: "ascii",
   },
-
   {
     number: "04",
-    type: "MACHINE LEARNING · COMPUTER VISION",
-
-    title: "ASL Recognition",
-
+    type: "DEEP LEARNING · UNIVERSITY PROJECT",
+    title: "ASL Gesture Recognition",
     description:
-      "A computer vision project using a convolutional neural network to recognize American Sign Language alphabet gestures from images, exploring the process of preparing visual data and training a model for gesture classification.",
-
+      "A convolutional neural network for ASL alphabet recognition, built as a university deep learning project. It explores preparing image data and training a gesture classifier, and provides the foundation for my follow-up work with MediaPipe.",
     tech: ["Python", "PyTorch", "CNN", "Computer Vision"],
-
     github: "https://github.com/ha-anna/asl-alphabet-recognition",
-
     gradient: "from-pink-200 via-orange-200 to-violet-300",
+    visual: "asl",
+  },
+  {
+    number: "05",
+    type: "PROFESSIONAL EXPERIENCE · AI EDUCATION",
+    title: "AI Conversation Tutor",
+    description:
+      "Contributed to an AI-powered Korean language-learning product built around conversational practice. My work included backend infrastructure and application logic with Python and FastAPI, database services, and the systems supporting the learning experience.",
+    tech: ["Python", "FastAPI", "Flutter", "Firebase", "AWS"],
+    gradient: "from-cyan-200 via-violet-200 to-fuchsia-300",
+    visual: "conversation",
+  },
+  {
+    number: "06",
+    type: "BACKEND · DOCUMENT RETRIEVAL",
+    title: "Knowledge Agent",
+    description:
+      "A RAG backend built from scratch to explore document retrieval and backend architecture. The FastAPI service connects document extraction, chunking, embeddings, vector storage, and retrieval, with Ollama for local model inference.",
+    tech: ["Python", "FastAPI", "ChromaDB", "Ollama", "Docker"],
+    github: "https://github.com/ha-anna/knowledge-agent",
+    gradient: "from-violet-300 via-fuchsia-200 to-orange-200",
+    visual: "knowledge",
   },
 ];
 
@@ -95,9 +98,9 @@ export default function Projects() {
             </p>
 
             <h2 className="text-4xl font-medium tracking-[-0.05em] sm:text-5xl md:text-7xl">
-              Things I&apos;ve
+              Software, vision,
               <br />
-              <span className="text-zinc-400">made & worked on.</span>
+              <span className="text-zinc-400">and what’s underneath.</span>
             </h2>
           </div>
 
@@ -191,7 +194,7 @@ export default function Projects() {
 
           {/* Visual */}
           <div className="order-1 min-w-0 lg:order-2">
-            <ProjectVisual project={project} index={active} />
+            <ProjectVisual project={project} />
           </div>
         </div>
       </div>
@@ -201,10 +204,8 @@ export default function Projects() {
 
 function ProjectVisual({
   project,
-  index,
 }: {
   project: Project;
-  index: number;
 }) {
   return (
     <div
@@ -219,10 +220,11 @@ function ProjectVisual({
       <div className="absolute -bottom-24 -left-24 h-60 w-60 rounded-full bg-white/30 blur-2xl [transform:translateZ(0)] sm:h-80 sm:w-80 sm:blur-3xl" />
 
       <div className="relative flex h-full w-full min-w-0 items-center justify-center">
-        {index === 0 && <ConversationVisual />}
-        {index === 1 && <KnowledgeVisual />}
-        {index === 2 && <AsciiVisual />}
-        {index === 3 && <AslVisual />}
+        {project.visual === "cxr" && <CxrVisual />}
+        {project.visual === "conversation" && <ConversationVisual />}
+        {project.visual === "knowledge" && <KnowledgeVisual />}
+        {project.visual === "ascii" && <AsciiVisual />}
+        {project.visual === "asl" && <AslVisual />}
       </div>
 
       <div className="absolute bottom-4 left-5 text-[10px] font-medium text-zinc-700/60 sm:bottom-6 sm:left-7 sm:text-xs">
@@ -408,13 +410,28 @@ function AslVisual() {
         </div>
 
         <div className="mt-1.5 text-2xl font-medium tracking-[-0.05em] text-zinc-900 sm:mt-2 sm:text-3xl">
-          ASL → A
+          ASL recognition
         </div>
       </div>
 
       <div className="absolute left-4 top-4 h-2.5 w-2.5 rounded-full bg-[#d9ff4a] sm:left-6 sm:top-6 sm:h-3 sm:w-3" />
 
       <div className="absolute bottom-5 right-5 h-3 w-3 rounded-full bg-violet-500 sm:bottom-7 sm:right-7 sm:h-4 sm:w-4" />
+    </div>
+  );
+}
+
+function CxrVisual() {
+  return (
+    <div className="w-[88%] max-w-[480px] rounded-[1.5rem] border border-white/50 bg-zinc-950/90 p-5 text-white shadow-2xl sm:p-8">
+      <p className="text-xs uppercase tracking-[0.18em] text-cyan-200">VisionX CXR-CAD</p>
+      <h4 className="mt-5 text-2xl font-medium tracking-tight sm:text-4xl">Learning from<br />medical images.</h4>
+      <div className="mt-6 space-y-3 border-t border-white/15 pt-5 text-xs text-zinc-300 sm:text-sm">
+        <p>01 — Chest X-ray data</p>
+        <p>02 — Multi-label classification</p>
+        <p>03 — Evaluation &amp; explainability</p>
+      </div>
+      <p className="mt-6 text-[10px] uppercase tracking-widest text-zinc-400">Academic capstone · In progress</p>
     </div>
   );
 }
