@@ -49,7 +49,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[100dvh] overflow-hidden px-6 py-6 md:px-10 md:py-8">
+    <section id="home" className="relative min-h-[calc(100dvh-7rem)] overflow-hidden px-6 py-6 md:px-10 md:py-8">
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -right-40 top-10 h-[500px] w-[500px] rounded-full bg-cyan-300/20 blur-[70px] [transform:translateZ(0)]" />
@@ -59,15 +59,7 @@ export default function Hero() {
         <div className="hidden md:block absolute bottom-[-200px] left-[20%] h-[400px] w-[400px] rounded-full bg-fuchsia-300/15 blur-[70px] [transform:translateZ(0)]" />
       </div>
 
-      <div className="relative z-10 flex min-h-[calc(100dvh-3rem)] flex-col md:min-h-[calc(100dvh-4rem)]">
-        {/* Header */}
-        <div className="text-sm">
-          <span className="font-medium">HA ANNA </span>
-          <span className="text-cyan-200"> ✦ </span>
-
-          <span className="text-zinc-500"> SEOUL, KR</span>
-        </div>
-
+      <div className="relative z-10 flex min-h-[calc(100dvh-10rem)] flex-col md:min-h-[calc(100dvh-9.5rem)]">
         {/* Main */}
         <div className="grid flex-1 items-center gap-16 py-16 lg:grid-cols-2">
           {/* Left */}
